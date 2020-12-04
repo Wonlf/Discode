@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components'
 import { useForm } from 'react-hook-form';
+// import axios from "axios";
 
 const GlobalStyle = createGlobalStyle`
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
@@ -53,6 +54,21 @@ function Login() {
 
   function onSubmit(data) {
     console.log(data);
+    // axios({
+    //     url: '',
+    //     method: 'post',
+    //     data: {
+    //       query: `
+    //         query PostsForAuthor {
+    //           author(id: 1) {
+    //             ${data}
+    //             }
+    //           }
+    //         `
+    //     }
+    //   }).then((result) => {
+    //     console.log(result.data)
+    //   });
 
     //GraphQL 들어가는 부분
   }
@@ -76,7 +92,7 @@ function Login() {
               
               <Form onSubmit={handleSubmit(onSubmit)}>
                 
-                  <input type="text" name="id" placeholder="ID" ref={register}/>
+                  <input type="text" name="id" placeholder="Email" ref={register}/>
 			            <input type="password" name="pwd" placeholder="Password" ref={register}/>
             
                 

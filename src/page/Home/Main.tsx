@@ -17,29 +17,6 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Source Sans Pro', sans-serif;
         color: white;
         font-weight: 300;
-        
-        ::-webkit-input-placeholder { /* WebKit browsers */
-          font-family: 'Source Sans Pro', sans-serif;
-            color:    white;
-          font-weight: 300;
-        }
-        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-          font-family: 'Source Sans Pro', sans-serif;
-          color:    white;
-          opacity:  1;
-          font-weight: 300;
-        }
-        ::-moz-placeholder { /* Mozilla Firefox 19+ */
-          font-family: 'Source Sans Pro', sans-serif;
-          color:    white;
-          opacity:  1;
-          font-weight: 300;
-        }
-        :-ms-input-placeholder { /* Internet Explorer 10+ */
-          font-family: 'Source Sans Pro', sans-serif;
-          color:    white;
-          font-weight: 300;
-        }
       }
 
       @-webkit-keyframes square {
@@ -160,7 +137,7 @@ const Form = styled.form`
 		transition-duration: 0.25s;
 		font-weight: 300;
 		
-		&:hover{
+		button:hover{
 			background-color: fade(white, 40%);
 		}
 	}

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import { useForm } from 'react-hook-form';
+//import axios from "axios";
+
 
 const GlobalStyle = createGlobalStyle`
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
@@ -51,19 +53,13 @@ function Register() {
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
-    console.log(data.id);
-
-    const idPattern = /^[a-z0-9]{5,20}$/;
+  
     const pwdPattern = /^[a-z0-9~!@#$%^&*()_+|<>?:{}]{8,16}/;
     const nickPattern = /^[a-zA-Z/0-9[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]{5,15}/;
     const namePattern = /^[a-zA-Z/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
     
     
-     if(!idPattern.test(data.id)) {
-
-        alert("아이디는 영문 숫자 5~20글자입니다.")
-        return;
-      }
+ 
 
       if(!pwdPattern.test(data.pwd)) {
 
@@ -86,6 +82,22 @@ function Register() {
         return;
       }
       
+
+      // axios({
+      //   url: '',
+      //   method: 'post',
+      //   data: {
+      //     query: `
+      //       query PostsForAuthor {
+      //         author(id: 1) {
+      //           ${data}
+      //           }
+      //         }
+      //       `
+      //   }
+      // }).then((result) => {
+      //   console.log(result.data)
+      // });
 
     //GraphQL 들어가는 부분
   }
@@ -110,12 +122,12 @@ function Register() {
               
               <Form onSubmit={handleSubmit(onSubmit)}>
                 
-                  <input type="text" name="id" placeholder="ID" ref={register}/>
+                  <input type="text" name="id" placeholder="Email" ref={register}/>
 			            <input type="password" name="pwd" placeholder="Password" ref={register}/>
                   <input type="text" name="nickname" placeholder="NickName" ref={register}/>
                   <input type="text" name="lastname" placeholder="LastName" ref={register}/>
                   <input type="text" name="firstname" placeholder="FirstName" ref={register}/>
-                  <input type="email" name="email" placeholder="Email" ref={register}/>
+            
                 
                   <br/>
                 

@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './page/Login';
-import Main from './page/Main';
-import Register from './page/Register';
+import Login from './page/Login/Login';
+import Main from './page/Home/Main';
+import Register from './page/Register/Register';
 
 
 
