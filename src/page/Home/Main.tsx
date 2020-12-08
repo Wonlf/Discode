@@ -66,6 +66,14 @@ function Main() {
                       회원가입
                       </button>
                     </Link>
+
+                    <br/>
+
+                    <Link to="/createroom" style={{ textDecoration: 'none' }}>
+                    <button id="login-button">
+                         화상채팅 예제
+                      </button>
+                    </Link>
           
                 
               </Form>
