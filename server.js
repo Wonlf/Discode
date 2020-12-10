@@ -11,7 +11,9 @@ const users = {};
 const socketToRoom = {};
 
 io.on('connection', socket => {
+    
     socket.on("join room", roomID => {
+        console.log("in")
         if (users[roomID]) {
             const length = users[roomID].length;
             if (length === 4) {
@@ -30,7 +32,7 @@ io.on('connection', socket => {
 
     socket.on("sending signal", payload => {
         io.to(payload.userToSignal).emit('user joined', { signal: payload.signal, callerID: payload.callerID });
-        console.log(payload)
+
     });
 
     socket.on("returning signal", payload => {

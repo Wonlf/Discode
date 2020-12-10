@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from 'react-router-dom';
-
+//import { Link } from 'react-router-dom';
 import io from "socket.io-client";
 import Peer from "simple-peer";
 import styled from "styled-components";
@@ -20,7 +19,7 @@ const StyledVideo = styled.video`
 `;
 
 const Video = (props) => {
-    const ref = useRef();
+    const ref:any = useRef();
 
     useEffect(() => {
         props.peer.on("stream", stream => {
@@ -41,17 +40,23 @@ const videoConstraints = {
 
 const Room = (props) => {
     const [peers, setPeers] = useState([]);
-    const socketRef = useRef();
-    const userVideo = useRef();
-    const peersRef = useRef([]);
-    const roomID = props.match.params.roomID;
+    const socketRef:any = useRef();
+    const userVideo:any = useRef();
+    const peersRef:any = useRef([]);
+    const roomID = document.URL.split('/')[5];
 
     useEffect(() => {
-        socketRef.current = io.connect("/");
+        
+        socketRef.current = io.connect("http://127.0.0.1:9999");
+        
         navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: true }).then(stream => {
             userVideo.current.srcObject = stream;
-            socketRef.current.emit("join room", roomID);
-            socketRef.current.on("all users", users => {
+
+            socketRef.current.emit("join room", roomID) //문제는 여기
+      
+
+            socketRef.current.on("all users", users => { //여기서부터 작동 안됨
+
                 const peers = [];
                 users.forEach(userID => {
                     const peer = createPeer(userID, socketRef.current.id, stream);
@@ -65,6 +70,7 @@ const Room = (props) => {
             })
 
             socketRef.current.on("user joined", payload => {
+             
                 const peer = addPeer(payload.signal, payload.callerID, stream);
                 peersRef.current.push({
                     peerID: payload.callerID,
@@ -111,14 +117,22 @@ const Room = (props) => {
         return peer;
     }
 
+//     function stopBothVideoAndAudio(stream) {
+//     stream.getTracks().forEach(function(track) {
+//         if (track.readyState === 'live') {
+//             track.stop();
+//         }
+//     });
+// }
+
     return (
       
         <Container>
-          <Link to="/" style={{ textDecoration: 'none' }}>
-                <button className={'wbutton'}>
+          <a href="/" style={{ textDecoration: 'none' }}>
+                <button className={'wbutton'} >
                   홈으로
                 </button>
-            </Link>
+            </a>
 
           
             <StyledVideo muted ref={userVideo} autoPlay playsInline />

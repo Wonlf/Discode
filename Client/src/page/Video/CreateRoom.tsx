@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { createGlobalStyle } from 'styled-components';
 import { v1 as uuid } from "uuid";
-import { createHashHistory } from 'history'
 
 //import axios from "axios";
 
@@ -51,10 +50,10 @@ const GlobalStyle = createGlobalStyle`
 
 
 function CreateRoom() {
-  const history = createHashHistory()
   function create(props) {
         const id = uuid();
-        history.push(`room/${id}/`);
+        window.location.hash = `/room/${id}`
+        // props.history.push(`/room/${id}`);
     }
 
 
