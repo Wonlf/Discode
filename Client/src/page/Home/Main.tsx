@@ -74,6 +74,12 @@ function Main() {
                          화상채팅 예제
                       </button>
                     </Link>
+
+                    <Link to="/join" style={{ textDecoration: 'none' }}>
+                    <button id="login-button">
+                         채팅 예제
+                      </button>
+                    </Link>
           
                 
               </Form>

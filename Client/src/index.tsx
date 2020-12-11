@@ -6,6 +6,8 @@ import Main from './page/Home/Main';
 import Register from './page/Register/Register';
 import CreateRoom from './page/Video/CreateRoom';
 import Room from './page/Video/Room';
+import Chat from './page/Chat/Chat';
+import Join from './components/Join/Join.tsx';
 
 
 
@@ -24,6 +26,13 @@ const appRouting = (
       <Route path="/room/:roomID">
         <Room />
       </Route>
+      <Route path="/chat">
+        <Chat />
+      </Route>
+      <Route path="/join">
+        <Join />
+      </Route>
+
       <Route exact path="/">
         <Main />
       </Route>
