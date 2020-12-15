@@ -8,8 +8,8 @@ var path = require("path");
 var mainWindow;
 function createWindow() {
     mainWindow = new electron_1.BrowserWindow({
-        width: 1920,
-        height: 1080,
+        width: 1280,
+        height: 720,
         // 이것들은 제가 사용하는 설정이니 각자 알아서 설정 하십시오.
         //alwaysOnTop: true,
         center: true,

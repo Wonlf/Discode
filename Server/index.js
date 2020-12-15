@@ -26,20 +26,20 @@ io.on('connect', (socket) => {
 
 
 
-     if (users[roomID]) {  //webrtc
-            const length = users[roomID].length;
-            if (length === 4) {
-                socket.emit("room full");
-                return;
-            }
-            users[roomID].push(socket.id);
-        } else {
-            users[roomID] = [socket.id];
-        }
-        socketToRoom[socket.id] = roomID;
-        const usersInThisRoom = users[roomID].filter(id => id !== socket.id);
+    //  if (users[roomID]) {  //webrtc
+    //         const length = users[roomID].length;
+    //         if (length === 4) {
+    //             socket.emit("room full");
+    //             return;
+    //         }
+    //         users[roomID].push(socket.id);
+    //     } else {
+    //         users[roomID] = [socket.id];
+    //     }
+    //     socketToRoom[socket.id] = roomID;
+    //     const usersInThisRoom = users[roomID].filter(id => id !== socket.id);
 
-        socket.emit("all users", usersInThisRoom);
+    //     socket.emit("all users", usersInThisRoom);
 
 
 

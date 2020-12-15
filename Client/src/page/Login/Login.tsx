@@ -1,51 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components'
+import './Login.scss';
 import { useForm } from 'react-hook-form';
 // import axios from "axios";
-
-const GlobalStyle = createGlobalStyle`
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
-        *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        
-        font-weight: 300;
-      }
-
-      body{
-        font-family: 'Source Sans Pro', sans-serif;
-        color: white;
-        font-weight: 300;
-        
-      }
-      .wbutton{
-        display: block;
-        appearance: none;
-        outline: 0;
-        border: 1px solid fade(white, 40%);
-        background-color: rgba(255, 255, 255, 0.2);
-        width: 100px;
-        
-        border-radius: 3px;
-        padding: 10px 15px;
-        display: block;
-        text-align: center;
-        font-size: 18px;
-        
-        color: white;
-        
-        transition-duration: 0.25s;
-        font-weight: 300;
-        
-        &:hover{
-          background-color: fade(white, 40%);
-        }
-      }
-
-`
 
 
 function Login() {
@@ -71,154 +28,50 @@ function Login() {
     //   });
 
     //GraphQL 들어가는 부분
+
+    
   }
+
+  const [name, setName] = useState('');
+  const [room, setRoom] = useState('');
+
+  // setRoom('general')
 
 
   return (
-    <Fragment>
-    <GlobalStyle/>
-    
-
-          <Wrapper>
-
-            <Link to="/" style={{ textDecoration: 'none' }}>
-                <button className={'wbutton'}>
-                  홈으로
-                </button>
-            </Link>
-
-            <Container>
-              <h1>로그인</h1>
-              
-              <Form onSubmit={handleSubmit(onSubmit)}>
-                
-                  <input type="text" name="id" placeholder="Email" ref={register}/>
-			            <input type="password" name="pwd" placeholder="Password" ref={register}/>
-            
-                
-                  <br/>
-                
-                    <button type="submit" id="login-button">
-                      로그인
-                      </button>
-              
-
-                     <br/>
-                    <br/>  
-                    
-                      <Link to="/register" style={{ textDecoration: 'none' }}>
-                          <button>
-                            회원가입하기
-                          </button>
-                      </Link>
-          
-                
-              </Form>
-            </Container>
-            
-          
-        </Wrapper>
-    </Fragment>
+            <div id="container">
+        <div id="inviteContainer">
+          <div className="logoContainer">
+              <img className="logo loadIn" alt="logo" src="https://seeklogo.com/images/D/discord-logo-134E148657-seeklogo.com.png"/>
+              <img className="text loadIn" alt="logo-text" src="https://monsterratdata.s3.ap-northeast-2.amazonaws.com/KakaoTalk_Image_2020-12-15-10-47-59.png"/>
+            </div>
+          <div className="acceptContainer loadIn">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <h1 className="loadIn">돌아오신 것을 환영해요!</h1>
+              <div className="formContainer">
+                <div className="formDiv loadIn">
+                  <p>이메일</p>
+                  <input type="email" name="email" onChange={(event) => setName(event.target.value)} ref={register}/>
+                </div>
+                <div className="formDiv loadIn">
+                  <p>비밀번호</p>
+                  <input type="password" name="pwd" onChange={(event) => setRoom('general')} ref={register} />
+                  <Link className="forgotPas" to="">비밀번호를 잊으셨나요?</Link>
+                </div>
+                <div className="formDiv loadIn" >
+                        <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
+                <button className="acceptBtn" type="submit">Login</button>
+              </Link>
+                  
+                  <span className="register">계정이 필요한가요?<Link to="/register">가입하기</Link></span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
   );
 }
-
-
-
-const Wrapper = styled.div`
-  background: #50a3a2;
-  background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: -moz-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: -o-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
-    
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 800px;
-    margin-top: -400px;
-    overflow: hidden;
-`;
-
-const Container = styled.div`
-  max-width: 600px;
-	margin: 0 auto;
-	padding: 80px 0;
-
-	height: 400px;
-  margin-top: 50px;
-	text-align: center;
-	
-	h1{
-		font-size: 40px;
-		transition-duration: 1s;
-		transition-timing-function: ease-in-put;
-		font-weight: 200;
-	}
-`
-
-const Form = styled.form`
-  padding: 20px 0;
-	position: relative;
-	z-index: 2;
-	
-  input{
-		display: block;
-		appearance: none;
-		outline: 0;
-		border: 1px solid fade(white, 40%);
-		background-color: fade(white, 20%);
-		width: 250px;
-		
-		border-radius: 3px;
-		padding: 10px 15px;
-		margin: 0 auto 10px auto;
-		display: block;
-		text-align: center;
-		font-size: 18px;
-		
-		color: #53e3a6;
-		
-		transition-duration: 0.25s;
-		font-weight: 300;
-		
-		&:hover{
-			background-color: fade(white, 40%);
-		}
-		
-		&:focus{
-			background-color: white;
-			width: 300px;
-			
-			color: #53e3a6;
-		}
-	}
-	
-	button{
-		display: block;
-		appearance: none;
-		outline: 0;
-		border: 1px solid fade(white, 40%);
-		background-color: rgba(255, 255, 255, 0.2);
-		width: 250px;
-		
-		border-radius: 3px;
-		padding: 10px 15px;
-		margin: 0 auto 10px auto;
-		display: block;
-		text-align: center;
-		font-size: 18px;
-		
-		color: white;
-		
-		transition-duration: 0.25s;
-		font-weight: 300;
-		
-		&:hover{
-			background-color: fade(white, 40%);
-		}
-	}
-`
 
 
 

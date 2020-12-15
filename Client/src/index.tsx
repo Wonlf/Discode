@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './page/Login/Login';
-import Main from './page/Home/Main';
 import Register from './page/Register/Register';
 import CreateRoom from './page/Video/CreateRoom';
 import Room from './page/Video/Room';
@@ -17,9 +16,7 @@ const appRouting = (
       <Route path="/register">
         <Register />
       </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
+    
       <Route path="/createroom">
         <CreateRoom />
       </Route>
@@ -32,9 +29,8 @@ const appRouting = (
       <Route path="/join">
         <Join />
       </Route>
-
       <Route exact path="/">
-        <Main />
+        <Login />
       </Route>
     </Switch>
   </Router>
