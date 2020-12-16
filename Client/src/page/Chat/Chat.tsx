@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 import queryString from 'query-string';
 import io from "socket.io-client";
+import ScrollToBottom from 'react-scroll-to-bottom';
+
 
 import TextContainer from '../../components/TextContainer/TextContainer.tsx';
 import Messages from '../../components/Messages/Messages.tsx';
@@ -148,20 +150,17 @@ function Chat() {
 		<menu type="toolbar" className="menu">
 			<h2 className="menu-name">general</h2>
 		</menu>
-    {/* <InfoBar room={room} />
-      <Messages messages={messages} name={name} />
-       <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-     */}
+    
 		
-		<section className="chat">
+		<ScrollToBottom className="chat">
       <Messages messages={messages} name={name} />
-          <div className="chat-input">
-            {/* <InfoBar room={room} /> */}
-           
-           <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-              {/* <input className="chat-input-in"/> */}
-          </div>
-		</section>
+		</ScrollToBottom>
+
+    <div className="chat-bar-bottom">
+      <div className="chat-input">
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+      </div>
+    </div>
 	</div>
 </main>
 

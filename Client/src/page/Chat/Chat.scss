@@ -55,6 +55,7 @@ html, body
 	display: flex;
 	flex: 1;
 	flex-direction: column;
+	background-color: $menu-bg;
 }
 
 // SERVERS
@@ -177,6 +178,9 @@ html, body
 			width: 16px;
 			height: 16px;
 		}
+	}
+	.scroll-height{
+		height: 50%;
 	}
 	
 	.channel-text
@@ -482,7 +486,7 @@ html, body
 }
 
 .chat-input{
-
+	flex: 1;
 	height: 45px;
 	background-color: #41444a;
 	position: absolute;
@@ -504,6 +508,11 @@ html, body
 	 font-size: 90%;
 	 color: #dcddde;
 	 padding: 13px;
+}
+
+.chat-bar-bottom{
+	display: flex;
+	flex: 0 0 80px;
 }
 
 // ICONS
