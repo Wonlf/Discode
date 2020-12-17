@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Work+Sans:300,400,700,900');
-* {outline-width: 0;	font-family: 'Montserrat' !important;}
+
 
 body {
 	background: #23272A;
@@ -10,6 +10,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	outline-width: 0;	font-family: 'Montserrat' !important;
 }
 #inviteContainerR {
 	display: flex;

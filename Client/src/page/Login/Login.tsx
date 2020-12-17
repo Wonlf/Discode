@@ -51,7 +51,7 @@ function Login() {
               <div className="formContainer">
                 <div className="formDiv loadIn">
                   <p>이메일</p>
-                  <input type="email" name="email" onChange={(event) => setName(event.target.value)} ref={register}/>
+                  <input type="text" name="email" onChange={(event) => setName(event.target.value)} ref={register}/>
                 </div>
                 <div className="formDiv loadIn">
                   <p>비밀번호</p>

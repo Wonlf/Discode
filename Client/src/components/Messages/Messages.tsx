@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import Message from './Message/Message.tsx';
+import Message from './Message/Message';
 
 import './Messages.css';
 
