@@ -87,14 +87,17 @@ html, body
 	flex-direction: column;
 	flex: 0 0 240px;
 	font-family: "Roboto";
+	height: calc(100% - 52px);
+	overflow: scroll;
 
 	.channels-header
 	{
+		height: 48px;
 		cursor: pointer;
 		display: flex;
 		align-items: center;
-		flex: 0 0 56px;
-		padding: 28px 24px;
+
+		padding: 0px 16px;
 		box-shadow: 0 1px 0 darken($channels-bg, 4.1%), inset 0 -1px 0 rgba(#000, 0.1);
 		transition: background 0.15s ease;
 		
@@ -320,7 +323,7 @@ html, body
 // MENU
 .menu
 {
-	flex: 0 0 57px;
+	flex: 0 0 48px;
 	padding: 0 20px 0 20px;
 	background: $menu-bg;
 	border-bottom: 1px solid darken($menu-bg, 2.5%);
@@ -470,23 +473,7 @@ html, body
 	}
 }
 
-.button-group
-{
-	.button:focus, .button:active
-	{
-		background: $button-bg-active;
-	}
-	
-	.button:not(:last-of-type)
-	{
-		border-right: 1px solid $border-accent;
-	}
-	
-	.button + .button
-	{
-		box-shadow: inset 1px 0 0 #393c41;
-	}
-}
+
 
 .chat-input{
 	flex: 1;

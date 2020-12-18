@@ -10,6 +10,12 @@ function createWindow() {
     mainWindow = new electron_1.BrowserWindow({
         width: 1280,
         height: 720,
+
+        minWidth: 940,
+        minHeight: 500,
+
+        maxWidth: 1920,
+        maxHeight: 1080,
         // 이것들은 제가 사용하는 설정이니 각자 알아서 설정 하십시오.
         //alwaysOnTop: true,
         center: true,

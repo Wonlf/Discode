@@ -15,19 +15,7 @@ $button-bg: #2E3136;
 $button-bg-active: lighten($button-bg, 5%);
 
 // GLOBAL
-*
-{
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	
-	// we override focus on specific elements
-	&:focus
-	{
-		outline: 0;
-	}
-}
+
 
 
 html, body
@@ -88,42 +76,6 @@ html, body
 	flex: 0 0 240px;
 	font-family: "Roboto";
 
-	.channels-header
-	{
-		cursor: pointer;
-		display: flex;
-		align-items: center;
-		flex: 0 0 56px;
-		padding: 28px 24px;
-		box-shadow: 0 1px 0 darken($channels-bg, 4.1%), inset 0 -1px 0 rgba(#000, 0.1);
-		transition: background 0.15s ease;
-		
-		.channels-header-dropdown
-		{
-			width: 18px;
-			height: 18px;
-			margin-left: auto;
-			pointer-events: none;
-			
-			use
-			{
-   				stroke-dasharray: 7;
-				transform-origin: 50%;
-				transition: stroke-dasharray 0.2s ease, transform 0.2s ease;
-			}
-		}
-		
-		&:hover, &:focus
-		{
-			background: darken($channels-bg, 2.5%);
-		}
-		
-		&:focus use
-		{
-			stroke-dasharray: 14;
-			transform: rotate(-90deg);
-		}
-	}
 	
 	.channels-list-text, .channels-list-voice
 	{
@@ -320,7 +272,7 @@ html, body
 // MENU
 .menu
 {
-	flex: 0 0 57px;
+	flex: 0 0 48px;
 	padding: 0 20px 0 20px;
 	background: $menu-bg;
 	border-bottom: 1px solid darken($menu-bg, 2.5%);
@@ -354,101 +306,7 @@ html, body
 	overflow: scroll;
 }
 
-// SERVER
-.server
-{
-	width: 50px;
-	height: 50px;
-	border-radius: 25px;
-	background-color: $server-bg;
-	background-repeat: no-repeat;
-	margin-bottom: 8px;
-	cursor: pointer;
-	position: relative;
-	
-	&:not(.active)
-	{
-		animation: server-hover-out 0.6s ease;
-		
-		&:hover, &:focus
-		{
-			animation: server-hover-in 0.8s ease forwards;
-		}
-	}
-	
-	.server-icon
-	{
-		border-radius: inherit;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	
-	.server-icon > img
-	{
-		border-radius: inherit;
-		max-width: 100%;
-	}
-	
-	&.server-friends
-	{
-		margin-bottom: 46px;
-		text-align: center;
-		
-		svg { max-width: 60%; max-height: 60%; }
-		
-		&.active::before { display: none; }
-		
-		&::after
-		{
-			content: "2 ONLINE";
-			color: rgba($body-color, 0.3);
-			pointer-events: none;
-			font-weight: 300;
-			font-size: 0.6rem;
-			position: absolute;
-			bottom: -35px;
-			left: 3px;
-			padding-bottom: 10px;
-			border-bottom: 2px solid lighten($servers-bg, 5%);
-		}
-	}
-	
-	// unread/active
-	&::before
-	{
-		position: absolute;
-		top: 20px;
-		left: -15px;
-		content: " ";
-		display: block;
-		width: 10px;
-		height: 10px;
-		border-radius: 25px;
-	}
-	
-	&.active
-	{
-		border-radius: 15px;
-		background-color: $server-bg-active;
-	}
-	
-	&.unread::before
-	{
-		background: $server-marker-unread;
-	}
-	
-	&.active::before
-	{
-		background: $server-marker-active;
-		height: 40px;
-		top: 5px;
-	}
-	
-	&.active.unread::before { transition: all 0.2s ease-in-out; }
-}
+
 
 // BUTTON
 .button
@@ -470,23 +328,6 @@ html, body
 	}
 }
 
-.button-group
-{
-	.button:focus, .button:active
-	{
-		background: $button-bg-active;
-	}
-	
-	.button:not(:last-of-type)
-	{
-		border-right: 1px solid $border-accent;
-	}
-	
-	.button + .button
-	{
-		box-shadow: inset 1px 0 0 #393c41;
-	}
-}
 
 .chat-input{
 	flex: 1;

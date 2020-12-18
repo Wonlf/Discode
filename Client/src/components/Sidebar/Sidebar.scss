@@ -21,7 +21,7 @@ $button-bg-active: lighten($button-bg, 5%);
 {
 	height: 100%;
 	background: $servers-bg;
-	flex: 0 0 70px;
+	flex: 0 0 72px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -84,22 +84,25 @@ $button-bg-active: lighten($button-bg, 5%);
 		
 		svg { max-width: 60%; max-height: 60%; }
 		
-		&.active::before { display: none; }
-		
-		&::after
-		{
-			content: "2 ONLINE";
-			color: rgba($body-color, 0.3);
-			pointer-events: none;
-			font-weight: 300;
-			font-size: 0.6rem;
+		&.active::before { 
+			display: none; 
 			position: absolute;
-			bottom: -35px;
-			left: 3px;
-			padding-bottom: 10px;
-			border-bottom: 2px solid lighten($servers-bg, 5%);
-		}
+		top: 20px;
+		left: -15px;
+		content: " ";
+		display: block;
+		width: 10px;
+		height: 10px;
+		border-radius: 25px;
+		
+			background: $server-marker-active;
+		height: 40px;
+		top: 5px;
 	}
+	}
+	
+
+
 	
 	// unread/active
 	&::before
@@ -135,7 +138,30 @@ $button-bg-active: lighten($button-bg, 5%);
 	&.active.unread::before { transition: all 0.2s ease-in-out; }
 }
 
+.sidebar-click{
+	display:block; width:50px; height: 50px;
+	margin-bottom: 8px;
 
+}
+
+.bar{
+		height: 2px;
+    width: 32px;
+    border-radius: 1px;
+    background-color: hsla(0,0%,100%,0.06);
+	}
+
+	.p-bar{
+		    position: relative;
+    margin: 0 0 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 72px;
+	}
 
 // ICONS
 svg[id]

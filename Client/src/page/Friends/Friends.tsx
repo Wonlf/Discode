@@ -29,37 +29,39 @@ function Friends() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    const { name, room } = queryString.parse(window.location.hash.split('#/chat')[1]);
+//   useEffect(() => {
+//     const { name, room } = queryString.parse(window.location.hash.split('#/chat')[1]);
 
-    socket = io(ENDPOINT);
+//     socket = io(ENDPOINT);
 
-    setRoom(room);
-    setName(name)
+//     setRoom(room);
+//     setName(name)
 
-    socket.emit('join', { name, room }, (error) => {
-      if(error) {
-        alert(error);
-      }
-    });
-  }, [ENDPOINT, window.location.hash.split('#/chat')[1]]);
+//     socket.emit('join', { name, room }, (error) => {
+//       if(error) {
+//         alert(error);
+//       }
+//     });
+//   }, [ENDPOINT, window.location.hash.split('#/chat')[1]]);
   
-  useEffect(() => {
-    socket.on('message', message => {
-      setMessages(messages => [ ...messages, message ]);
-    });
+//   useEffect(() => {
+//     socket.on('message', message => {
+//       setMessages(messages => [ ...messages, message ]);
+//     });
     
-    socket.on("roomData", ({ users }) => {
-      setUsers(users);
-    });
-}, []);
+//     socket.on("roomData", ({ users }) => {
+//       setUsers(users);
+//     });
+// }, []);
 
   const sendMessage = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
-    if(message) {
-      socket.emit('sendMessage', message, () => setMessage(''));
-    }
+    // if(message) {
+    //   socket.emit('sendMessage', message, () => setMessage(''));
+    // }
+
+    console.log("as")
   }
 
   
@@ -82,43 +84,9 @@ function Friends() {
             </svg>
             
         </header>
-        <h3>친구</h3>
-            
-        <section className="channels-list">
-          <header className="channels-list-header focusable">
-            <h5>Text Channels</h5>
-          </header>
-          
-          <ul className="channels-list-text">
-            <li className="channel focusable channel-text active">
-              <span className="channel-name">general</span>
-              <button className="button"  aria-label="Invite">
-                <svg><use xlinkHref="#icon-invite" /></svg>
-                </button>
-              <button className="button"  aria-label="settings">
-                <svg><use xlinkHref="#icon-channel-settings" /></svg>
-                </button>
-            </li>
-            
-            <li className="channel focusable channel-text">
-              <span className="channel-name">help</span>
-              <button className="button"  aria-label="Invite">
-                <svg><use xlinkHref="#icon-invite" /></svg>
-                </button>
-              <button className="button"  aria-label="settings">
-                <svg><use xlinkHref="#icon-channel-settings" /></svg>
-                </button>
-            </li>
-          </ul>
-          
-          <header className="channels-list-header focusable">
-            <h5>Voice Channels</h5>
-          </header>
-        </section>
+      
         
         
-        <ControlBox />
-
 
       </aside>
 
