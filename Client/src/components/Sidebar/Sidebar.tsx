@@ -48,7 +48,7 @@ function Sidebar(props) {
           <div className={`server-sidebar focusable ${props.servers}`} role="button" aria-label="My Server" aria-selected="true">
             
               <div className="server-icon-sidebar">
-                <img src="https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png" />
+                    MS
                 </div>
           </div>
           </Link>

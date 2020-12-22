@@ -5,7 +5,7 @@ $body-color: #FFF;
 $servers-bg: #1E2124;
 $channels-bg: #2E3136;
 $border-accent: darken($channels-bg, 7.7%);
-$chat-bg: #36393E;
+$chat-bg: #36393f;
 $menu-bg: $chat-bg;
 $server-bg: $channels-bg;
 $server-bg-active: #7289DA;
@@ -30,6 +30,37 @@ html, body
   height: 100vh;
 }
 
+.header-wrap{
+	position: absolute;
+	width: 240px;
+	height: 48px;
+	z-index: 9999;
+	background-color: #2E3136;
+	padding: 0 10px;
+	align-items: center;
+	display: flex;
+	box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+
+}
+
+.friends-btn{
+	width: 100%;
+    height: 28px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #202225;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #72767d;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+		white-space: nowrap;
+		border-style: none;
+		padding: 0 5px;
+}
 
 // CONTAINERS
 .container
@@ -272,10 +303,12 @@ html, body
 // MENU
 .menu
 {
+	z-index: 2;
 	flex: 0 0 48px;
 	padding: 0 20px 0 20px;
 	background: $menu-bg;
-	border-bottom: 1px solid darken($menu-bg, 2.5%);
+	box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+
 	display: flex;
 	align-items: center;
 	font-family: "Roboto";

@@ -77,13 +77,16 @@ function Friends() {
   
 
      <aside className="channels">
-        <header className="channels-header focusable">
-          <h3 className="channels-header-name">My Server</h3>
-          <svg  aria-label="Dropdown" className="channels-header-dropdown">
-            <use xlinkHref="#icon-dropdown" />
-            </svg>
+        {/* <header className="channels-header"> */}
+        
+            <div className="header-wrap">
+                <button className="friends-btn">
+                  대화 찾기 또는 시작하기
+                </button>
+            </div>  
+     
             
-        </header>
+        {/* </header> */}
       
         
         
@@ -94,20 +97,13 @@ function Friends() {
         
 		
 	<div className="vert-container">
-		<menu type="toolbar" className="menu">
-			<h2 className="menu-name">general</h2>
-		</menu>
+		<div  className="menu">
+    
+        
+		</div>
     
 		
-		<ScrollToBottom className="chat">
-      <Messages messages={messages} name={name} />
-		</ScrollToBottom>
-
-    <div className="chat-bar-bottom">
-      <div className="chat-input">
-        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-      </div>
-    </div>
+		
 	</div>
 
 

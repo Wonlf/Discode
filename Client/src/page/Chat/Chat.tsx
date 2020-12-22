@@ -75,10 +75,12 @@ function Chat() {
 
      <div className="channels">
         <header className="channels-header focusable">
+          <div className="channel-head">
           <h3 className="channels-header-name">My Server</h3>
           <svg  aria-label="Dropdown" className="channels-header-dropdown">
             <use xlinkHref="#icon-dropdown" />
             </svg>
+            </div>
         </header>
             
         <section className="channels-list">

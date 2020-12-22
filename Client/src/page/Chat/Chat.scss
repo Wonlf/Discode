@@ -79,6 +79,18 @@ html, body
 	}
 }
 
+.channel-head{
+	width: 100%;
+	height: 48px;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+
+		padding: 0px 16px;
+		//box-shadow: 0 1px 0 darken($channels-bg, 4.1%), inset 0 -1px 0 rgba(#000, 0.1);
+		transition: background 0.15s ease;
+}
+
 // CHANNELS
 .channels
 {
@@ -97,8 +109,8 @@ html, body
 		display: flex;
 		align-items: center;
 
-		padding: 0px 16px;
-		box-shadow: 0 1px 0 darken($channels-bg, 4.1%), inset 0 -1px 0 rgba(#000, 0.1);
+		// padding: 0px 16px;
+	box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
 		transition: background 0.15s ease;
 		
 		.channels-header-dropdown
@@ -326,10 +338,12 @@ html, body
 	flex: 0 0 48px;
 	padding: 0 20px 0 20px;
 	background: $menu-bg;
-	border-bottom: 1px solid darken($menu-bg, 2.5%);
+	
 	display: flex;
 	align-items: center;
 	font-family: "Roboto";
+		box-shadow: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+
 	
 	.menu-name
 	{
