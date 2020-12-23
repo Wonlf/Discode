@@ -32,6 +32,17 @@ function Login() {
     
   }
 
+  function SaveId(e) {
+
+    if (!name || !room) {
+      e.preventDefault();
+    }
+    else{
+      return null;
+    }
+    localStorage.setItem('id', name)
+  }
+
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
 
@@ -60,7 +71,9 @@ function Login() {
                   <Link className="forgotPas" to="">비밀번호를 잊으셨나요?</Link>
                 </div>
                 <div className="formDiv loadIn" >
-                        <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
+                        <Link onClick={SaveId} 
+                        
+                        to={`/chat?name=${name}&room=${room}`}>
                 <button className="acceptBtn" type="submit">Login</button>
               </Link>
                   

@@ -12,7 +12,7 @@ function ControlBox() {
      <div className="channels-footer-s">
           <img className="avatar" alt="Avatar" src="https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png" />
           <div className="channels-footer-details">
-            <span className="username">조성원</span>
+            <span className="username">{localStorage.getItem('id')}</span>
             <span className="tag">#8615</span>
           </div>
           <div className="channels-footer-controls button-group">
