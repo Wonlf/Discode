@@ -12,6 +12,7 @@
     "@types/socket.io-client": "^1.4.34",
     "axios": "^0.21.0",
     "electron-is-dev": "^1.2.0",
+    "electron-localstorage": "^1.0.5",
     "emoji-picker-react": "^3.2.4",
     "history": "^5.0.0",
     "node-sass": "^4.14.1",
