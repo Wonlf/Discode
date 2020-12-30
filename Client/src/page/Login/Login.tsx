@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.scss';
 import { useForm } from 'react-hook-form';
+import storage from 'electron-localstorage';
 // import axios from "axios";
 
 
 function Login() {
+
+  window.localStorage.setItem('id', "")
 
   const { register, handleSubmit } = useForm();
 
@@ -40,7 +43,8 @@ function Login() {
     else{
       return null;
     }
-    localStorage.setItem('id', name)
+
+    window.localStorage.setItem('id', name)
   }
 
   const [name, setName] = useState('');
