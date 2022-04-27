@@ -5,14 +5,17 @@ import React, { Fragment } from 'react';
 
 
 import './ControlBox.scss';
+function containsEncoedComponents(x) {
+    return (decodeURI(x) !== decodeURIComponent(x));
+}
 
 function ControlBox() {
   return(
     <Fragment>
      <div className="channels-footer-s">
-          <img className="avatar" alt="Avatar" src="https://discordapp.com/assets/0e291f67c9274a1abdddeb3fd919cbaa.png" />
+          <img className="avatar" alt="Avatar" src="https://monsterratdata.s3.ap-northeast-2.amazonaws.com/a.png" />
           <div className="channels-footer-details">
-            <span className="username">{localStorage.getItem('id')}</span>
+            <span className="username">{(document.URL.split("name=")[1].split("&")[0])}</span>
             <span className="tag">#8615</span>
           </div>
           <div className="channels-footer-controls button-group">

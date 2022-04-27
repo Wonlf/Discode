@@ -16,7 +16,7 @@ import ControlBox from "../../components/ControlBox/ControlBox";
 import './Chat.scss';
 
 
-const ENDPOINT = 'http://localhost:5000/';
+const ENDPOINT = 'http://192.168.3.66:5500/';
 
 let socket;
 

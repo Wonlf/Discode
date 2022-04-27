@@ -25,7 +25,7 @@ const Message = ({ message: { text, user }, name }) => {
     isSentByCurrentUser
       ? (
         <div className="messageContainer justifyStart">
-          <img src="https://discord.com/assets/322c936a8c8be1b803cd94861bdfa868.png" aria-hidden="true" className="avatar" alt=" "/>  
+          <img src="https://monsterratdata.s3.ap-northeast-2.amazonaws.com/a.png" aria-hidden="true" className="avatar" alt=" "/>  
           <div className="messageBox">
             <p className="sentText">{trimmedName} <span className="time_set">{year}.{month}.{date}.</span></p>
             <p className="messageText">{text}</p>
@@ -34,7 +34,7 @@ const Message = ({ message: { text, user }, name }) => {
         )
         : (
           <div className="messageContainer justifyStart">
-            <img src="https://discord.com/assets/322c936a8c8be1b803cd94861bdfa868.png" aria-hidden="true" className="avatar" alt=" "/>
+            <img src="https://monsterratdata.s3.ap-northeast-2.amazonaws.com/a.png" aria-hidden="true" className="avatar" alt=" "/>
             <div className="messageBox">
               <p className="sentText">{user} <span className="time_set">{year}.{month}.{date}.</span></p>
               <p className="messageText">{(text)}</p>
